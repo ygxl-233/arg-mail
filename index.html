@@ -1,68 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <title>mail</title>
-</head>
-<body>
-  <h1>发送电子邮件</h1>
-  <form id="emailForm">
-    <label for="from">发件人：</label>
-    <input type="text" id="from" name="from" required /><br />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5aKT56KR</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <label for="to">收件人：</label>
-    <input type="email" id="to" name="to" required /><br />
+    body, html {
+      height: 100%;
+      overflow: hidden; /* 防止页面滚动 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
 
-    <label for="subject">主题：</label>
-    <input type="text" id="subject" name="subject" required /><br />
+    /* 优化背景效果 */
+    body {
+      background: repeating-radial-gradient(#000 0px, #111 1px, #000 2px);
+      background-size: 20px 20px; /* 控制背景的粒度 */
+      animation: snow 1s infinite linear;
+    }
 
-    <label for="body">正文：</label><br />
-    <textarea id="body" name="body" rows="4" cols="50" required></textarea><br />
+    @keyframes snow {
+      from { background-position: 0 0; }
+      to { background-position: 100% 100%; }
+    }
 
-    <button type="submit">发送邮件</button>
-  </form>
+    .container {
+      background-color: #000;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      word-break: break-word;  /* 自动换行 */
+      overflow-wrap: break-word; /* 防止文字溢出 */
+      word-wrap: break-word;  /* 兼容旧版浏览器 */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      margin: 0 auto;
+    }
 
-  <div id="sending" style="display:none;">正在发送邮件，请稍候...</div>
-  <div id="errorMessage" style="display:none; color:red;">邮件发送失败，请检查邮箱信息。</div>
-  <div id="successMessage" style="display:none; color:green;">邮件已成功发送！</div>
+    .number {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
 
-  <script>
-    document.getElementById('emailForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    .footer-text {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
 
-      const from = document.getElementById('from').value.trim();
-      const to = document.getElementById('to').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const body = document.getElementById('body').value.trim();
-
-      if (body.length > 36) {
-        alert("正文内容不能超过36个字节！");
-        return;
+    /* 手机端优化 */
+    @media (max-width: 600px) {
+      .number {
+        font-size: 2rem;
       }
 
-      // 显示“正在发送”，隐藏其他消息
-      document.getElementById('sending').style.display = 'block';
-      document.getElementById('errorMessage').style.display = 'none';
-      document.getElementById('successMessage').style.display = 'none';
+      .footer-text {
+        font-size: 0.9rem;
+      }
 
-      // 模拟卡顿：2秒后显示结果
-      setTimeout(function() {
-        document.getElementById('sending').style.display = 'none';
-        if (to === "example@mail.com") {
-          document.getElementById('successMessage').style.display = 'block';
-        } else {
-          document.getElementById('errorMessage').style.display = 'block';
-        }
-
-        document.getElementById('emailForm').reset();
-      }, 2000);
-    });
-
-    // 代码混淆（基础保护）
-    (function() {
-      var _0x12 = ["\x66\x72\x6F\x6D\x20\x64\x6F\x63\x75\x6D\x65\x6E\x74\x42\x79\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E"];
-      (window[_0x12[0]] || function(){})();
-    })();
-  </script>
+      .container {
+        padding: 1.5rem;
+        width: 95%;  /* 更适合小屏幕 */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="number">5oiR55qE56m66Ze06YeM5pyJ5oiR5oOz6K+055qE6K+d</div>
+    <div class="footer-text">
+      5pyJ5Liq5aWz5a2p5Y+r5q6154Wc5a6bMTPlsoHvvIzkuIo35bm057qn77yM6KKr5LiJ5Liq55S3
+5a2p6L2u5rWB5by65aW45ZCO5rS75Z+L77yM5q275ZCO5Y+Y5oiQ5oCo6a2C77yM6L+Z5LiJ5Liq
+55S35a2p55qE5ZCN5a2X5Y+r546L5qOu77yM5byg5Y+v5aiB77yM5LmM54mb44CC5aW55oOz6K6p
+5omA5pyJ5Lq655+l6YGT6L+Z5Lu25LqL77yM6L2s57uZMTDkuKrkurrvvIzlpbnku4rlpKnkvJrm
+iqXnrZTkvaDvvIznnIvliLDkuI3lj5HogIXvvIznnaHml7bnlZnmhI/nlZnmhI/kvaDlrrbnqpfm
+iLflkozmnpXlpLTml4HovrnjgIIKCuacieS4quWPq+acseaik+WHveeahOWls+Wtqe+8jOeci+S6
+hui/meS4quS/oeaBr++8jOi/mOS7peS4uuaYr+WBh+eahO+8jOayoeacieWPkemAge+8jOWlueWm
+iOWmiOWcqDHkuKrmnIjlkI7ooqvovabmkp7mrbvvvIzniLjniLjlvpfkuobnu53nl4fjgII=
+    </div>
+  </div>
 </body>
 </html>
