@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>mail</title>
+</head>
+<body>
+  <h1>发送电子邮件</h1>
+  <form id="emailForm">
+    <label for="from">发件人：</label>
+    <input type="text" id="from" name="from" required /><br />
+
+    <label for="to">收件人：</label>
+    <input type="email" id="to" name="to" required /><br />
+
+    <label for="subject">主题：</label>
+    <input type="text" id="subject" name="subject" required /><br />
+
+    <label for="body">正文：</label><br />
+    <textarea id="body" name="body" rows="4" cols="50" required></textarea><br />
+
+    <button type="submit">发送邮件</button>
+  </form>
+
+  <div id="sending" style="display:none;">正在发送邮件，请稍候...</div>
+  <div id="errorMessage" style="display:none; color:red;">邮件发送失败，请检查邮箱信息。</div>
+  <div id="successMessage" style="display:none; color:green;">邮件已成功发送！</div>
+
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const from = document.getElementById('from').value.trim();
+      const to = document.getElementById('to').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const body = document.getElementById('body').value.trim();
+
+      if (body.length > 36) {
+        alert("正文内容不能超过36个字节！");
+        return;
+      }
+
+      // 显示“正在发送”，隐藏其他消息
+      document.getElementById('sending').style.display = 'block';
+      document.getElementById('errorMessage').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'none';
+
+      // 模拟卡顿：2秒后显示结果
+      setTimeout(function() {
+        document.getElementById('sending').style.display = 'none';
+        if (to === "example@mail.com") {
+          document.getElementById('successMessage').style.display = 'block';
+        } else {
+          document.getElementById('errorMessage').style.display = 'block';
+        }
+
+        document.getElementById('emailForm').reset();
+      }, 2000);
+    });
+
+    // 代码混淆（基础保护）
+    (function() {
+      var _0x12 = ["\x66\x72\x6F\x6D\x20\x64\x6F\x63\x75\x6D\x65\x6E\x74\x42\x79\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E"];
+      (window[_0x12[0]] || function(){})();
+    })();
+  </script>
+</body>
+</html>
